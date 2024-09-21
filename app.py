@@ -5,17 +5,16 @@ from streamlit_extras.let_it_rain import rain
 import random
 
 def play_background_music():
-    # Verwenden von HTML/JS, um das Audio im Hintergrund automatisch zu starten
-    st.markdown("""
-    <audio id="background-audio" autoplay loop>
-        <source src="audio/background.mp3" type="audio/mpeg">
+    st.markdown(
+        """
+        <audio autoplay loop>
+        <source src="https://raw.githubusercontent.com/jannik-hoffmann/geburtstagsapp-joel/main/audio/background.mp3" type="audio/mp3">
         Your browser does not support the audio element.
-    </audio>
-    <script>
-        var audio = document.getElementById("background-audio");
-        audio.volume = 1;  # Lautstärke einstellen (optional)
-    </script>
-    """, unsafe_allow_html=True)
+        </audio>
+        """,
+        unsafe_allow_html=True
+    )
+
 
 def main():
     st.set_page_config(page_title="MEGA-GEWINNSPIEL!!!", layout="wide")
@@ -118,7 +117,9 @@ def main():
         Egal, was du wählst, wir werden einen fantastischen Tag zusammen verbringen!
 
         Alles Gute zum Geburtstag!
+                 
         Deine Freunde
+                 
         Nils und Jannik 🎂 🎁🎈
                  """)
         # Witziger Zusatz
