@@ -5,11 +5,16 @@ from streamlit_extras.let_it_rain import rain
 import random
 
 def play_background_music():
-    # Musik automatisch starten und das Audio-Element verstecken
+    # Verwenden von HTML/JS, um das Audio im Hintergrund automatisch zu starten
     st.markdown("""
-    <audio autoplay loop style="display:none">
-        <source src="audio/background.mp3" type="audio/mp3">
+    <audio id="background-audio" autoplay loop>
+        <source src="audio/background.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
+    <script>
+        var audio = document.getElementById("background-audio");
+        audio.volume = 1;  # Lautstärke einstellen (optional)
+    </script>
     """, unsafe_allow_html=True)
 
 def main():
@@ -18,7 +23,7 @@ def main():
     # Hintergrundmusik starten
     play_background_music()
     
-    # CSS für blinkende Elemente, bunte Farben und andere Stilelemente
+    # CSS für Comic Sans, blinkende Elemente, bunte Farben und andere Stilelemente
     st.markdown("""
     <style>
     @keyframes blink {
@@ -34,6 +39,7 @@ def main():
         font-weight: bold;
         color: #FF1493;
         text-shadow: 2px 2px #FFD700;
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     }
     .rainbow-text {
         background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
@@ -41,13 +47,16 @@ def main():
         -webkit-text-fill-color: transparent;
         font-size: 24px;
         font-weight: bold;
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     }
     .centered {
         text-align: center;
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     }
     body {
         background-color: #FFD700;
         background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -104,8 +113,8 @@ def main():
         Einen Gutschein für ein unvergessliches Abenteuer mit Nils und Jannik 🌟🌟🌟!
 
         Wir schenken dir einen Tag voller Action, Spaß und Erinnerungen. 
-        
-        Ein paar gute Ideen haben wir schon uns freuen uns darauf die Details mit dir zu planen.
+
+        Ein paar gute Ideen haben wir schon und freuen uns darauf, die Details mit dir zu planen.
         Egal, was du wählst, wir werden einen fantastischen Tag zusammen verbringen!
 
         Alles Gute zum Geburtstag!
